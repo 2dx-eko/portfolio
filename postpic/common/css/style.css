@@ -1,0 +1,476 @@
+@charset "UTF-8";
+/*------------------------
+
+リセット
+
+------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-feature-settings: "palt";
+  -webkit-font-feature-settings: "palt";
+  -moz-font-feature-settings: "palt";
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  letter-spacing: 0;
+  font-size: 1.6rem;
+  font-family: 'noto';
+  color: #4B4B42;
+  font-family: 'Roboto', sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+}
+button:focus{
+  outline: none;
+}
+
+input:focus{
+  outline: none;
+}
+
+@media all and (-ms-high-contrast:none) {
+body {
+}
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@media all and (-ms-high-contrast:none) {
+body {
+
+}
+}
+ol, ul {
+  list-style: none;
+  margin: 0;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  margin: 0;
+}
+a {
+  transition: 0.3s;
+  color: #4B4B42;
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+/*------------------------
+
+共通  
+
+------------------------*/
+.blue{color: #4a87c7;transition: 0.4s;}
+
+.red{
+  color: #de2525;
+  transition: 0.4s;
+}
+
+/*------------------------
+
+ログインページ
+
+------------------------*/
+body.login{
+}
+
+body.login .login_col {
+  background: #fff;
+  padding: 3rem;
+  box-shadow: 0rem 0rem 3rem 1rem #5f5f5f;
+  max-width: 50rem;
+  width: 96%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+}
+
+.login_col .title {text-align: center;margin-bottom: 2rem;font-weight: bold;font-size: 4rem;transition: 0.4s;}
+
+input {
+  width: 100%;
+  border: none;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+
+input:focus {
+  outline: none;
+}
+button.login {
+  width: 100%;
+  border: none;
+  background: #4B4B42;
+  color: #fff;
+  padding: 2rem 0;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  transition: 0.3s;
+}
+
+button.login:hover {
+  background: #ffffff;
+  color: #4B4B42;
+  letter-spacing: 0.3rem;
+}
+
+button {
+  cursor: pointer;
+}
+body.login input {
+  border-bottom: solid .1rem #adadad;
+  transition: 0.3s;
+}
+body.login input:hover {
+  border-color: #000;
+}
+
+.login .error {
+  border: solid 1px;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  color: #d21414;
+}
+
+body.login .success {
+  color: #4a87c7;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.logo {
+  transition: 0.4s;
+}
+
+.logo:hover .red {
+  color: #4a87c7;
+}
+
+.logo:hover .blue {
+  color: #de2525;
+}
+/*----------------TOPページここから-----------------*/
+header {
+  box-shadow: 0px 0px 9px 1px #9f9f9f;
+  width: 100%;
+  background: rgb(255 211 81 / 40%);
+  padding: 1rem 1rem;
+  position: fixed;
+  top: 0;
+}
+header .parent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+header .parent .logo {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+header .parent input {
+  width: 26rem;
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 0;
+}
+
+header .parent form {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header .parent .content {
+  display: flex;
+  align-items: center;
+  flex-basis: 47rem;
+}
+header .parent .content button {
+  background: #4B4B42;
+  color: #fff;
+  padding: .5rem 1rem;
+  font-size: 2rem;
+  transition: 0.3s;
+  width: 16rem;
+  border: solid 1px #4B4B42;
+}
+
+header .parent .content button:hover {
+  background: #ffffff;
+  color: #4B4B42;
+  letter-spacing: 0.2rem;
+  border: solid 1px #9c9c9c;
+}
+
+label > input {
+  display:none; /* アップロードボタンのスタイルを無効にする */
+}
+
+header .parent form label {
+  margin-right: 0.8rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 0.2s;
+  border-bottom: solid 1px;
+  padding-bottom: .2rem;
+}
+
+header .parent .content button.logout {
+  background: #de2525;
+  border: solid 1px #de2525;
+  margin-left: 1rem;
+}
+
+header .parent .content button.logout:hover {}
+
+header .parent .content button.logout:hover {
+  background: #fff;
+  color: #de2525;
+  border: solid 1px #ea9595;
+}
+header .parent form label:hover {
+  color: #4a87c7;
+  border-bottom: solid 3px;
+}
+.login_col .title:hover .red {
+  color: #4a87c7;
+}
+
+.login_col .title:hover .blue {
+  color: #de2525;
+}
+body.top {
+  padding: 9rem 0rem 0rem 0;
+}
+.top .error {
+  text-align: center;
+  color: #de2525;
+  border: solid 1px;
+  width: 260px;
+  margin: auto;
+  padding: 1rem 1rem;
+}
+
+body.top .success {
+  display: inline-block;
+  font-size: 16px;
+  border-bottom: solid 1px #44ff03;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+body.top main {
+  padding: 0rem 1rem;
+}
+
+.pic_parent ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pic_parent ul li {
+  flex-basis: 15%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+.pic_parent ul li img {
+  width: 100%;
+  transition: 0.3s;
+}
+
+.pic_parent ul li:nth-of-type(6n) {
+  margin-right: 0;
+}
+
+.pic_parent ul li a:hover img {
+  box-shadow: 0rem 0.6rem 1rem 0rem #757575;
+}
+
+.fadein {
+  opacity: 0;
+  animation-name: fadein;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  animation-delay: .8s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.popup_area .popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgb(0 0 0 / 50%);
+  display: none;
+}
+
+.popup .col {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+  margin: auto;
+  max-width: 40rem;
+  width: 100%;
+  background: #fff;
+  padding: 1rem;
+}
+form.popform {
+  display: flex;
+  justify-content: center;
+}
+
+form.popform a {
+  margin-right: 3rem;
+  font-size: 2rem;
+  color: #4a87c7;
+}
+
+button.delete_btn {
+  font-size: 2rem;
+  background: no-repeat;
+  border: none;
+  color: #de2525;
+  transition: 0.4s;
+}
+.popup .col img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border: solid 2px #d6d6d6;
+}
+
+button.delete_btn:hover {
+  opacity: 0.7;
+}
+
+.popup .col > div {
+  position: relative;
+}
+
+.popup .col > div > span {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.popup .col > div > span:hover {
+  color: #fff;
+}
+
+/*----------------------------------SP-------------------------------------*/
+@media screen and (max-width: 775px) {
+  body.top{
+    padding: 12rem 0rem 0rem 0;
+  }
+  header .parent{
+    display: block;
+  }
+
+  header .parent .content button.upload{width: auto;min-width: 7rem;font-size: 1.1rem;}
+
+  header .parent .content button{
+    width: 49%;
+    min-width: 15rem;
+  }
+
+  header .parent .content button.logout{
+    width: auto;
+    min-width: 8rem;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+  }
+  header .parent form{
+    justify-content: left;
+    flex-wrap: wrap;
+  }
+
+  header .parent form label{
+    font-size: 1.0rem;
+  }
+  header{}
+  header .parent .logo{
+    font-size: 3rem;
+    margin-bottom: .2rem;
+}
+header .parent input{
+  margin-bottom: .3rem;
+}
+header .parent input.file{
+  font-size: 1.2rem;
+  width: 23rem;
+}
+
+.pic_parent ul li {flex-basis: 23%;}
+
+.pic_parent ul li img {
+
+}
+.pic_parent ul li:nth-of-type(4n) {
+  margin-right: 0;
+}
+.pic_parent ul li:nth-of-type(6n) {
+  margin-right: 2%;
+}
+
+}
