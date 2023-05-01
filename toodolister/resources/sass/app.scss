@@ -1,0 +1,776 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+/*! destyle.css v1.0.15 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+
+/* 上記css改変ver 2020 */
+
+/* ============================================ */
+
+/* リセット */
+
+/* ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  /* iOSの向き変更後のフォントサイズ調整 */
+  -webkit-tap-highlight-color: transparent;
+  /* iOSリンクの灰色*/
+  font-size: 62.5%;
+  font-weight: normal;
+  font-feature-settings: "palt";
+  -webkit-font-feature-settings: "palt";
+  -moz-font-feature-settings: "palt";
+  word-wrap: break-word;
+}
+
+body,
+p,
+table,
+blockquote,
+address,
+pre,
+iframe,
+form,
+figure,
+dl {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+/* リセット-見出し */
+
+/* ============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+/* リセット-テキスト関連 */
+
+/* ============================================ */
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: #1d3cf9;
+}
+
+a:hover {
+  transition: 0.3s;
+  -webkit-text-decoration-color: transparent;
+  text-decoration-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none;
+  /* Chromeの下枠削除 */
+  text-decoration: underline;
+  /* テキスト装飾を追加 */
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+  /* テキスト装飾を追加 */
+}
+
+strong {
+  font-weight: bold;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* ブラウザでフォントサイズの継承とスケーリングを修正 */
+  font-size: inherit;
+  /* ブラウザで奇数の `em`フォントサイズを修正 */
+}
+
+small {
+  font-size: 85%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* リセット-リスト */
+
+/* ============================================ */
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+dd {
+  margin-left: 0;
+}
+
+/* リセット-フォーム */
+
+/* ============================================ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  appearance: auto;
+  vertical-align: middle;
+  color: inherit;
+  font: inherit;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border-radius: 0;
+  text-align: inherit;
+}
+
+::-moz-placeholder {
+  color: #aaa;
+}
+
+::placeholder {
+  color: #aaa;
+}
+
+:-ms-input-placeholder {
+  color: #aaa;
+}
+
+::-ms-input-placeholder {
+  color: #aaa;
+}
+
+/* ラジオとチェックボックスの外観をリセットして、iOSでの外観を維持 */
+
+[type=checkbox] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  appearance: checkbox;
+}
+
+[type=radio] {
+  -webkit-appearance: radio;
+  -moz-appearance: radio;
+  appearance: radio;
+}
+
+/** Edge、IEでオーバーフローを表示. */
+
+button,
+input {
+  overflow: visible;
+}
+
+/* Edge, Firefox, and IEのテキスト変換の継承を削除 */
+
+button,
+select {
+  text-transform: none;
+}
+
+/* iOSおよびSafariのクリッカブルタイプの設定 */
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button[disabled],
+[type=button][disabled],
+[type=reset][disabled],
+[type=submit][disabled] {
+  cursor: default;
+}
+
+/* Firefox：内側の境界線とパディングを削除 */
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* フォーカススタイルを復元 */
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* フォーカススタイルを復元 */
+
+select::-ms-expand {
+  display: none;
+}
+
+/* パディングリセット */
+
+option {
+  padding: 0;
+}
+
+/* 非表示にリセット */
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  color: inherit;
+  /* Correct the color inheritance from `fieldset` elements in IE. */
+  display: table;
+  /* EdgeおよびIEでのテキストの折り返し修正 */
+  max-width: 100%;
+  /* EdgeおよびIEでのテキストの折り返し修正 */
+  padding: 0;
+  /*  `fieldset`要素をゼロにしたときに引っ掛からないように */
+  white-space: normal;
+  /* EdgeおよびIEでのテキストの折り返し修正 */
+}
+
+/* Chrome、Firefox、Operaで正しい垂直方向の配置 */
+
+progress {
+  vertical-align: baseline;
+}
+
+/* IEのデフォルトの垂直スクロールバーを削除. */
+
+textarea {
+  overflow: auto;
+}
+
+/* Chromeの増分ボタンと減分ボタンのカーソルスタイルを修正 */
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  outline-offset: -2px;
+  /* Safariのアウトラインスタイルを修正 */
+}
+
+/* macOSのChromeとSafariの内側のパディングを削除 */
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* iOSおよびSafariのクリッカブルタイプの設定 */
+  font: inherit;
+  /* Safariでフォントのプロパティを「継承」に変更 */
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+/* リセット-テーブル */
+
+/* ============================================ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 0;
+  font-weight: normal;
+}
+
+caption {
+  text-align: left;
+}
+
+hr {
+  box-sizing: content-box;
+  /* Firefoxで正しいボックスサイズ */
+  height: 0;
+  /* Firefoxで正しいボックスサイズ */
+  overflow: visible;
+  /* EdgeとIEでオーバーフロー */
+  border: 0;
+  border-top: 1px solid;
+  margin: 0;
+  clear: both;
+  color: inherit;
+}
+
+address {
+  font-style: inherit;
+}
+
+img {
+  border-style: none;
+  vertical-align: bottom;
+}
+
+a:hover img {
+  /*	opacity: .7;*/
+  transition: 0.3s;
+}
+
+embed,
+object,
+iframe {
+  border: 0;
+  vertical-align: bottom;
+}
+
+/* Edge、IE +、Firefoxで正しいディスプレイを追加 */
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+/* IEで正しいディスプレイを追加. */
+
+template,
+[hidden] {
+  display: none;
+}
+
+section#login {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 96%;
+  max-width: 50rem;
+  z-index: 11;
+}
+
+section#login section {
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-top: solid 5px #0a759d;
+  box-shadow: 2px 4px 3px 0px #494949;
+}
+
+section#login section h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #249bc8;
+  text-shadow: 0 0.01em 0 #999, 0 0.02em 0 #888, 0 0.03em 0 #777, 0 0.04em 0 #666, 0 0.05em 0 #555, 0 0.06em 0 #a0a0a0, 0 0.08em 0 #fff;
+}
+
+.loginbox p {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: #585858;
+  font-weight: bold;
+}
+
+input[type=text],
+input[type=password] {
+  width: 100%;
+  border: solid 1px #5b5b5b;
+  padding: 1rem 1rem;
+  font-size: 1.5rem;
+}
+
+.loginbox.margin {
+  margin-bottom: 2rem;
+}
+
+input.btn {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  color: #fff;
+  background-color: #0a759d;
+  border-bottom: 5px solid #013b51;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+input.btn:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #0a759d;
+  border-bottom: 2px solid #013b51;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  background: #04BBD3;
+  position: absolute;
+  z-index: 3;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Font Awesome 5 Free";
+  word-break: break-all;
+}
+
+section#login form {
+  position: relative;
+}
+
+span.mode_change {
+  position: absolute;
+  right: 0px;
+  top: 4px;
+  background: #0a759d;
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 40px;
+  text-align: center;
+}
+
+span.mode_change:hover {
+  background: #249BC8;
+}
+
+section#login .form {
+  transition: 0.2s;
+}
+
+section#login .ac_create {
+  transition: 0.2s;
+}
+
+section#login .error,
+.session_text {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+section#login .error li,
+.session_text {
+  background: #0A759D;
+  margin-bottom: 0.5rem;
+  padding: 5px 10px;
+}
+
+.forget_login {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 2rem;
+  background: #249BC8;
+  color: #fff;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.forget_login:hover {
+  background: #0A759D;
+}
+
+header.todo {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0px 2px 4px 0px #686868;
+  position: relative;
+  z-index: 6;
+  width: 100%;
+  min-width: 100rem;
+}
+
+header.todo section.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+header.todo .left h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #0A759D;
+  text-shadow: 0 0.01em 0 #999, 0 0.02em 0 #888, 0 0.03em 0 #777, 0 0.04em 0 #666, 0 0.05em 0 #555, 0 0.06em 0 #a0a0a0, 0 0.08em 0 #fff;
+  margin-right: 2rem;
+}
+
+header.todo section.flex .left {
+  display: flex;
+  align-items: center;
+}
+
+input.btn.create {
+  color: #0A759D;
+  background-color: #ffffff;
+  border-bottom: 5px solid #0A759D;
+}
+
+input.btn.create:hover {
+  border-bottom: 2px solid #0A759D;
+}
+
+.catcreate_col {
+  width: 400px;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem;
+}
+
+.catcreate_col p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+input.cat_submit {
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%;
+  background: #0A759D;
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  transition: 0.2s;
+}
+
+input.cat_submit:hover {
+  background: #fff;
+  color: #0A759D;
+}
+
+.create_back.active {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 10;
+  top: 0;
+}
+
+body.todo .error,
+body.todo .session_text {
+  display: block;
+  position: relative;
+  z-index: 7;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  background: #0A759D;
+  margin-bottom: 1.5rem;
+  padding: 5px 10px;
+}
+
+.todo_box {
+  position: relative;
+  z-index: 8;
+  margin: 0 2rem 2rem 2rem;
+  height: auto;
+}
+
+.todo_box .flex {
+  display: flex;
+  overflow-x: scroll;
+  padding: 0 0 2rem 0;
+  height: 100%;
+}
+
+.todo_box .flex::-webkit-scrollbar {
+  height: 14px;
+  /* スクロールバーの高さ */
+}
+
+.todo_box .flex::-webkit-scrollbar-thumb {
+  background: #0d9ccf;
+  /* ツマミの色 */
+  border-radius: 7px;
+  /* ツマミ両端の丸み */
+}
+
+.todo_box .flex::-webkit-scrollbar-track {
+  background: #fff;
+  /* トラックの色 */
+  border-radius: 7px;
+  /* トラック両端の丸み */
+}
+
+.todo_box .col {
+  padding: 10px;
+  background: rgba(240, 240, 240, 0.8);
+  border-radius: 2px;
+  border: solid 1px #848484;
+  flex-basis: 27rem;
+  margin-right: 10px;
+  height: calc(100vh - 11rem);
+  position: relative;
+  min-height: 10rem;
+  flex-shrink: 0;
+}
+
+.todo_box .col p.title {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #0A759D;
+  font-weight: bold;
+}
+
+.todo_box .col .content {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.todo_box .col .content p {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.todo_box .col .content button.del {
+  background: #0A759D;
+  color: #fff;
+  padding: 0px 4px 2px 4px;
+  opacity: 0;
+}
+
+.todo_box .col .content form {
+  text-align: right;
+  font-size: 15px;
+}
+
+.todo_box .col .content button.del:hover {
+  background: #ffffff;
+  color: #0A759D;
+}
+
+button.list-del {
+  background: #0A759D;
+  color: #fff;
+  padding: 2px 6px 2px 4px;
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+
+button.list-del:hover {
+  color: #0A759D;
+  background: #fff;
+}
+
+.todo_input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.todo_input button.todo_create_submit {
+  background: #bf0000;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  font-weight: bold;
+  width: 5rem;
+}
+
+.todo_input button.todo_create_submit:hover {
+  background: #fff;
+  color: #bf0000;
+}
+
+input.todo_create {
+  padding: 0.3rem 0.3rem;
+}
+
+.todo_box .col .content:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.todo_box .col .content:hover button.del {
+  opacity: 1;
+}
+
+.todo_box .col .content p.date {
+  font-size: 1.1rem;
+  color: #8a8a8a;
+}
+
+.todo_col_parent {
+  overflow-y: auto;
+  height: calc(100vh - 21rem);
+}
+
+.todo_box .col .content.bold {
+  background: #ffed50;
+}
