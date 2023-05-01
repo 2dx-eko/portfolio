@@ -1,0 +1,420 @@
+@charset "utf-8";
+/*------------------------
+
+リセット
+
+------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    /* font-feature-settings: "palt"; */
+    /* -webkit-font-feature-settings: "palt"; */
+    -moz-font-feature-settings: "palt";
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    letter-spacing: 0;
+    line-height: 1.61;
+    font-family: Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Meiryo, "メイリオ", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #333;
+}
+
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+/*------------------------ここから---------------------------*/
+section.head_parent {
+    padding: 10px;
+    box-shadow: 0px 1px 3px 2px #818181;
+    background: linear-gradient(to bottom right, #129554, #65F900);
+}
+
+section.head_parent .center {
+    max-width: 1200px;
+    width: 98%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+section.head_parent h1 {
+    color: #fff;
+    font-size: 20px;
+}
+
+section.head_parent ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.head_parent ul li {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+section.head_parent ul li a {text-decoration: none;color: #fff;font-weight: bold;font-size: 15px;transition: .2s;}
+
+section.head_parent h1 span {
+    font-weight: bold;
+    color: #e3ff9a;
+}
+section.head_parent ul li a:hover {
+    color: #096e32;
+}
+section.head_parent ul li:first-child {
+    margin: 0;
+}
+header {
+    /* position: fixed; */
+    width: 100%;
+    top: 0;
+}
+
+
+/* Google Fonts 読み込み */
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+/* 全体を囲うコンテナー */
+.clock_panret {
+  width: 98%;
+  max-width: 22rem;
+  margin: auto;
+  box-shadow: 0px 0px 4px 2px #9a9a9a;
+  border-radius: 0.4rem;
+  padding: 0.6rem;
+  background: #e3e3e3;
+  margin-bottom: 2rem;
+}
+
+/* 時計の共通スタイル */
+.clock {
+  font-family: 'Share Tech Mono', monospace;
+  color: #022f14;
+  /* text-shadow: 2px 1px 1px #ffffff; */
+  line-height: 1.2;
+  text-align: center;
+  font-weight: bold;
+  background: #ffffff;
+  padding: 1rem 0 .4rem 0;
+  border-radius: .4rem;
+  box-shadow: 2px 1px 4px 3px #858585 inset;
+}
+
+/* 日付のスタイル */
+.clock-date {
+  font-size: 24px;
+}
+
+/* 時間のスタイル */
+.clock-time {
+  font-size: 60px;
+}
+
+/* 文字サイズ調整 */
+@media screen and (max-width: 768px) {
+  .clock-date {
+    font-size: 21px;
+  }
+  .clock-time {
+    font-size: 40px;
+  }
+}
+
+main {
+    max-width: 1100px;
+    width: 96%;
+    margin: auto;
+    margin-top: 7rem;
+}
+
+
+.top_form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+input[type="text"] {
+    border: solid 1px #8d8d8d;
+    transition: .3s;
+    padding: .2rem;
+    border-radius: 0.2rem;
+}
+
+
+
+input[type="text"]:focus-visible {
+    outline: none;
+    box-shadow: 1px 5px 4px 0px #bbb;
+}
+
+.user_box {
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.user_box input[type="text"] {
+    font-size: 23px;
+}
+
+.top_submit {
+    display: flex;
+    justify-content: center;
+}
+
+input[type="submit"] {
+    background: no-repeat;
+    border: solid 2px #7f7f7f;
+    border-radius: .1rem;
+    padding: 0.4rem 0.4rem;
+    transition: .2s;
+    color: #353535;
+}
+.top_submit input[type="submit"]:first-child {
+    margin-right: 1rem;
+}
+
+.top_submit input[type="submit"] {
+    font-size: 2rem;
+    width: 14rem;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+.top_submit input.syukkin:hover {
+    background: #0c4cd0;
+    color: #fff;
+}
+
+.top_submit input.taikin:hover {
+    background: #b10000;
+    color: #fff;
+}
+
+.error {
+    text-align: center;
+    color: #f00;
+    font-size: 1.2rem;
+}
+.common_parent {
+    /* display: flex; */
+    justify-content: center;
+}
+
+.common_parent h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    position: relative;
+}
+.common_parent h2:after {
+    content: "";
+    display: block;
+    height: 4px;
+    background: -webkit-linear-gradient(to right, rgb(230, 90, 90), transparent);
+    background: linear-gradient(to right, #3CC82A, transparent);
+}
+input.user_create {
+    font-size: 2rem;
+    width: 14rem;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+.user_submit {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+input.user_create:hover {
+    background: #30B935;
+    color: #fff;
+}
+.session_text {
+    text-align: center;
+    font-size: 24px;
+    color: #31ab11;
+}
+select {
+    border: solid 1px #8d8d8d;
+    transition: .3s;
+    padding: 0rem 0.2rem;
+    border-radius: 0.2rem;
+    text-align: center;
+}
+
+.user_box select {width: 180px;}
+
+table.management {
+    border-left: solid 1px #5f5f5f;
+    border-top: solid 1px #5f5f5f;
+    margin-bottom: 2rem;
+}
+
+th,td {
+    border-right: solid 1px #5f5f5f;
+    border-bottom: solid 1px #5f5f5f;
+    padding: 0.2rem 0.5rem;
+    font-size: 20px;
+}
+
+th {
+    font-weight: bold;
+    background: #3fc525;
+    color: #fff;
+}
+
+h3.update_h3 {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: solid 1px #dddddd;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #636363;
+    margin-top: 30px;
+}
+
+p.day {
+    font-size: 19px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+.day p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: solid 2px #dddddd;
+    color: #4c4c4c;
+}
+.dayancer ul li {
+    border-left: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd;
+    flex-basis: 7%;
+    margin-right: 0%;
+    background: #a0a0a0;
+    text-align: center;
+    transition: .2s;
+}
+
+.dayancer ul {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+.dayancer ul li a {
+    color: #fff;
+    display: block;
+    padding: 3px 0 3px 0;
+    letter-spacing: 3px;
+}
+.dayancer {
+    margin-bottom: 2rem;
+}
+
+.prev_next ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prev_next {
+    width: 300px;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.prev_next ul a {
+    font-size: 25px;
+}
+
+.margin0{
+    margin:0;
+}
+
+table.management.update th {
+    background: #6c6c6c;
+}
+.dayancer ul li:hover {
+    background: #c1c1c1;
+}
+table.management.update input[type="text"] {
+    width: 95%;
+}
+.error.user_update {
+    font-size: 28px;
+}
+/*------------------------SP---------------------------*/
+@media only screen and (max-width: 102px) {
+    main{
+        
+margin-top: 9rem;
+    }
+    section.head_parent .center {
+      
+display: block;
+    }
+    section.head_parent ul{justify-content: left;}
+
+    .top_submit{
+
+    }
+    .top_submit input[type="submit"]{
+    font-size: 1.5rem;
+    width: 10rem;
+}
+
+.common_parent{
+    
+padding: 0 4%;
+}
+th,td {
+
+font-size: 16px;
+}
+
+.dayancer ul li {
+
+flex-basis: 14%;
+}
+
+.dayancer ul {
+ 
+}
+.dayancer ul li a {
+ 
+font-size: 12px;
+ 
+letter-spacing: 0;
+}
+}
